@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style type="text/css">
+form{
+width: 30%;
+margin: 0 auto;
+background: rgb(70,70,70);
+padding: 50px;
+margin-top: 200px;
+}
+
+.w-100{
+width:100%;
+}
+
+.text-center{
+text-align: center;
+color:#fff;
+}
+
+.form-input{
+height:50px;
+}
+
+button{
+background-color: #eee;
+color: #000;
+padding: 10px;
+font-size: 0.9em;
+margin-top: 22px;
+border:none;
+}
+</style>
+
+
+</head>
+
+<body>
+<form id="myForm">
+
+<h2 class="text-center"> TEST FORM </h2>
+
+<input type="text" placeholder="Add your name here..." class="form-input w-100">
+
+<br>
+<br>
+<div id="work-field-wrapper">
+<input type="text" placeholder="Add your work here..." id="work-field" class="form-input bg-red w-100">
+<input type="text" placeholder="Add your work here..." id="work-field" class="form-input bg-red w-100">
+<input type="text" placeholder="Add your work here..." id="work-field" class="form-input bg-red w-100">
+</div>
+
+<button onclick="addNew();" id="addbtn"> Add New Field</button>
+
+</form>
+
+<script type="text/javascript">
+
+const form = document.querySelector('form');
+
+
+form.addEventListener('submit', function(event) {
+ 
+ event.preventDefault();
+
+});
+
+function addNew() {
+const defaultWork = document.getElementById('work-field-wrapper');
+
+const dupWork = defaultWork.cloneNode(true);
+
+defaultWork.parentNode.insertBefore(dupWork, defaultWork.nextSibling);
+}
+</script>
+</body>
+</html>
